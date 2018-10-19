@@ -4,6 +4,11 @@
   "description": "CategoryImageGui module",
   "license": "proprietary",
   "require": {
+    "spryker/category-extension": "*",
+    "spryker/gui": "*",
+    "spryker/kernel": "*",
+    "spryker/locale": "*",
+    "spryker/symfony": "*"
   },
   "require-dev": {
     "spryker/code-sniffer": "*",
