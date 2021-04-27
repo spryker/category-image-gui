@@ -5,23 +5,21 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\CategoryImageGui\Communication\Plugin;
+namespace Spryker\Zed\CategoryImageGui\Communication\Plugin\CategoryGui;
 
-use Generated\Shared\Transfer\TabItemTransfer;
 use Generated\Shared\Transfer\TabsViewTransfer;
-use Spryker\Zed\CategoryExtension\Dependency\Plugin\CategoryFormTabExpanderPluginInterface;
+use Spryker\Zed\CategoryGuiExtension\Dependency\Plugin\CategoryFormTabExpanderPluginInterface;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 
 /**
- * @deprecated Use {@link \Spryker\Zed\CategoryImageGui\Communication\Plugin\ImageSetCategoryFormTabExpanderPlugin} instead.
- *
  * @method \Spryker\Zed\CategoryImageGui\CategoryImageGuiConfig getConfig()
  * @method \Spryker\Zed\CategoryImageGui\Communication\CategoryImageGuiCommunicationFactory getFactory()
  */
-class CategoryImageFormTabExpanderPlugin extends AbstractPlugin implements CategoryFormTabExpanderPluginInterface
+class ImageSetCategoryFormTabExpanderPlugin extends AbstractPlugin implements CategoryFormTabExpanderPluginInterface
 {
     /**
      * {@inheritDoc}
+     * - Adds image tab to `CategoryFormTabs`.
      *
      * @api
      *
@@ -31,12 +29,8 @@ class CategoryImageFormTabExpanderPlugin extends AbstractPlugin implements Categ
      */
     public function expand(TabsViewTransfer $tabsViewTransfer): TabsViewTransfer
     {
-        $tabItemTransfer = (new TabItemTransfer())->setName('image')
-            ->setTitle('Image')
-            ->setTemplate('@CategoryImageGui/_partials/image-tab.twig');
-
-        $tabsViewTransfer->addTab($tabItemTransfer);
-
-        return $tabsViewTransfer;
+        return $this->getFactory()
+            ->createCategoryImageTabExpander()
+            ->expandWithImageTab($tabsViewTransfer);
     }
 }
