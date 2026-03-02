@@ -32,11 +32,6 @@ class CategoryImageGuiToLocaleBridge implements CategoryImageGuiToLocaleInterfac
         return $this->localeFacade->getLocaleCollection();
     }
 
-    /**
-     * @param int $idLocale
-     *
-     * @return \Generated\Shared\Transfer\LocaleTransfer
-     */
     public function getLocaleById(int $idLocale): LocaleTransfer
     {
         return $this->localeFacade->getLocaleById($idLocale);
@@ -50,9 +45,6 @@ class CategoryImageGuiToLocaleBridge implements CategoryImageGuiToLocaleInterfac
         return $this->localeFacade->getAvailableLocales();
     }
 
-    /**
-     * @return string
-     */
     public function getCurrentLocaleName(): string
     {
         return $this->localeFacade->getCurrentLocaleName();

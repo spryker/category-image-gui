@@ -16,11 +16,6 @@ interface CategoryImageGuiToLocaleInterface
      */
     public function getLocaleCollection(): array;
 
-    /**
-     * @param int $idLocale
-     *
-     * @return \Generated\Shared\Transfer\LocaleTransfer
-     */
     public function getLocaleById(int $idLocale): LocaleTransfer;
 
     /**
@@ -28,8 +23,5 @@ interface CategoryImageGuiToLocaleInterface
      */
     public function getAvailableLocales(): array;
 
-    /**
-     * @return string
-     */
     public function getCurrentLocaleName(): string;
 }

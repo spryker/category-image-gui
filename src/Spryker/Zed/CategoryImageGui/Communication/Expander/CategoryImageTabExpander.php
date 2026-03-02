@@ -17,11 +17,6 @@ class CategoryImageTabExpander implements CategoryImageTabExpanderInterface
      */
     protected const TAB_TITLE = 'Images';
 
-    /**
-     * @param \Generated\Shared\Transfer\TabsViewTransfer $tabsViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\TabsViewTransfer
-     */
     public function expandWithImageTab(TabsViewTransfer $tabsViewTransfer): TabsViewTransfer
     {
         $tabItemTransfer = (new TabItemTransfer())->setName('image')

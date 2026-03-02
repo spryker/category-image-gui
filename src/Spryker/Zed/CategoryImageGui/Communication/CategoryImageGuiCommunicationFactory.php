@@ -24,9 +24,6 @@ use Symfony\Component\Form\DataTransformerInterface;
  */
 class CategoryImageGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Symfony\Component\Form\DataTransformerInterface
-     */
     public function createImageSetCollectionTransformer(): DataTransformerInterface
     {
         return new ImageSetCollectionTransformer(
@@ -34,9 +31,6 @@ class CategoryImageGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Symfony\Component\Form\DataTransformerInterface
-     */
     public function createLocaleTransformer(): DataTransformerInterface
     {
         return new LocaleTransformer(
@@ -44,33 +38,21 @@ class CategoryImageGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Symfony\Component\Form\DataTransformerInterface
-     */
     public function createImageCollectionTransformer(): DataTransformerInterface
     {
         return new ImageCollectionTransformer();
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryImageGui\Dependency\Facade\CategoryImageGuiToLocaleInterface
-     */
     public function getLocaleFacade(): CategoryImageGuiToLocaleInterface
     {
         return $this->getProvidedDependency(CategoryImageGuiDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryImageGui\Communication\Expander\CategoryImageTabExpanderInterface
-     */
     public function createCategoryImageTabExpander(): CategoryImageTabExpanderInterface
     {
         return new CategoryImageTabExpander();
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryImageGui\Communication\Expander\CategoryImageFormExpanderInterface
-     */
     public function createCategoryImageFormExpander(): CategoryImageFormExpanderInterface
     {
         return new CategoryImageFormExpander(

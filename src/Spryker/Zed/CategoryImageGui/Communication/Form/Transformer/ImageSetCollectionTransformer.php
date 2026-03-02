@@ -18,9 +18,6 @@ class ImageSetCollectionTransformer implements DataTransformerInterface
      */
     protected $localeFacade;
 
-    /**
-     * @param \Spryker\Zed\CategoryImageGui\Dependency\Facade\CategoryImageGuiToLocaleInterface $localeFacade
-     */
     public function __construct(CategoryImageGuiToLocaleInterface $localeFacade)
     {
         $this->localeFacade = $localeFacade;

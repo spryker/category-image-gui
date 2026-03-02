@@ -29,10 +29,6 @@ class CategoryImageFormExpander implements CategoryImageFormExpanderInterface
      */
     protected $imageSetCollectionTransformer;
 
-    /**
-     * @param \Spryker\Zed\CategoryImageGui\Dependency\Facade\CategoryImageGuiToLocaleInterface $localeFacade
-     * @param \Symfony\Component\Form\DataTransformerInterface $imageSetCollectionTransformer
-     */
     public function __construct(
         CategoryImageGuiToLocaleInterface $localeFacade,
         DataTransformerInterface $imageSetCollectionTransformer
@@ -41,11 +37,6 @@ class CategoryImageFormExpander implements CategoryImageFormExpanderInterface
         $this->imageSetCollectionTransformer = $imageSetCollectionTransformer;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     *
-     * @return void
-     */
     public function buildForm(FormBuilderInterface $builder): void
     {
         $builder->add(static::FIELD_IMAGE_SETS, ImageSetCollectionForm::class, [
